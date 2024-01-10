@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.henriquebenjamim.coursesmanager.model.Course;
+import com.henriquebenjamim.coursesmanager.dto.CourseDTO;
 import com.henriquebenjamim.coursesmanager.service.CourseService;
 
 import jakarta.validation.Valid;
@@ -25,7 +25,7 @@ import jakarta.validation.constraints.Positive;
 @RestController
 @RequestMapping("/api/courses")
 public class CourseController {
-  
+
   private final CourseService courseService;
 
   public CourseController(CourseService courseService) {
@@ -33,23 +33,23 @@ public class CourseController {
   }
 
   @GetMapping
-  public List<Course> list() {
+  public List<CourseDTO> list() {
     return courseService.list();
   }
-  
+
   @GetMapping("/{id}")
-  public Course findById(@PathVariable @NotNull @Positive Long id) {
+  public CourseDTO findById(@PathVariable @NotNull @Positive Long id) {
     return courseService.findById(id);
   }
 
   @PostMapping
   @ResponseStatus(code = HttpStatus.CREATED)
-  public Course create(@RequestBody @Valid Course course) {
+  public CourseDTO create(@RequestBody @Valid @NotNull CourseDTO course) {
     return courseService.create(course);
   }
 
   @PutMapping("/{id}")
-  public Course update(@PathVariable Long id, @RequestBody @Valid Course course) {
+  public CourseDTO update(@PathVariable Long id, @RequestBody @Valid @NotNull CourseDTO course) {
     return courseService.update(id, course);
   }
 
