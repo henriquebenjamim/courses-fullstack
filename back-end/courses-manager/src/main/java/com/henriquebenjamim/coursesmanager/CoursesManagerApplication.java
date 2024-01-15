@@ -4,6 +4,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
 
 import com.henriquebenjamim.coursesmanager.enums.Category;
 import com.henriquebenjamim.coursesmanager.model.Course;
@@ -18,29 +19,31 @@ public class CoursesManagerApplication {
 	}
 
 	@Bean
+	@Profile("test")
 	CommandLineRunner initDatabase(CourseRepository courseRepository) {
 		return args -> {
 			courseRepository.deleteAll();
 
-			Course c = new Course();
-			c.setName("Angular com Spring");
-			c.setCategory(Category.BACK_END);
+			for (int i = 0; i < 20; i++) {
 
-			Lesson l = new Lesson();
+				Course c = new Course();
+				c.setName("Angular com Spring " + i);
+				c.setCategory(Category.BACK_END);
 
-			l.setName("Introdução");
-			l.setYoutubeUrl("watch?v=11");
-			l.setCourse(c);
-			c.getLessons().add(l);
+				Lesson l = new Lesson();
+				l.setName("Introdução");
+				l.setYoutubeUrl("01234567890");
+				l.setCourse(c);
+				c.getLessons().add(l);
 
-			Lesson l1 = new Lesson();
+				Lesson l1 = new Lesson();
+				l1.setName("Angular");
+				l1.setYoutubeUrl("01234567891");
+				l1.setCourse(c);
+				c.getLessons().add(l1);
 
-			l1.setName("Core do Angular");
-			l1.setYoutubeUrl("watch?v=22");
-			l1.setCourse(c);
-			c.getLessons().add(l1);
-
-			courseRepository.save(c);
+				courseRepository.save(c);
+			}
 		};
 	}
 

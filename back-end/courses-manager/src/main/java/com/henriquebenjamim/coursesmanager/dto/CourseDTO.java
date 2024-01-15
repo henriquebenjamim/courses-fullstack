@@ -1,6 +1,7 @@
 package com.henriquebenjamim.coursesmanager.dto;
 
 import java.util.List;
+import java.util.Locale.Category;
 
 import org.hibernate.validator.constraints.Length;
 

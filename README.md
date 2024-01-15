@@ -8,7 +8,7 @@ Este é o repositório oficial do projeto Courses Manager, uma aplicação desen
 
 - **Java + Spring Boot**: Utilizados para desenvolver o back end da aplicação, fornecendo uma base robusta e escalável para a lógica de negócios.
 
-- **PostgreSQL**: Escolhido como banco de dados para armazenar e gerenciar os dados da aplicação de maneira eficiente e confiável.
+- **MySQL**: Escolhido como banco de dados para armazenar e gerenciar os dados da aplicação de maneira eficiente e confiável.
 
 - **Docker**: Implementamos um container Docker para a aplicação, facilitando a implantação e garantindo consistência em diferentes ambientes.
 
@@ -47,3 +47,4 @@ Para executar a aplicação, siga as instruções abaixo:
 
 ```bash
 docker-compose up
+```
