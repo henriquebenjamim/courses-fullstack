@@ -1,47 +1,49 @@
-# Projeto Fullstack de Gerenciamento de Cursos
+# Courses Manager
 
-Este é um projeto fullstack desenvolvido para gerenciamento de cursos, utilizando as seguintes tecnologias:
+Este é o repositório oficial do projeto Courses Manager, uma aplicação desenvolvida para gerenciar cursos utilizando tecnologias modernas. Abaixo estão algumas informações importantes sobre o projeto.
 
-- Java 17
-- Spring Boot 3
-- Angular 17
+## Tecnologias Utilizadas
 
-## Visão Geral
+- **Angular**: Utilizado para desenvolver o front end da aplicação, proporcionando uma experiência de usuário moderna e responsiva.
 
-O objetivo deste projeto é fornecer uma aplicação de gerenciamento para cursos, com foco no domínio de cursos e suas respectivas aulas. A aplicação oferece funcionalidades completas de CRUD (Create, Read, Update, Delete) para garantir um controle eficaz das informações.
+- **Java + Spring Boot**: Utilizados para desenvolver o back end da aplicação, fornecendo uma base robusta e escalável para a lógica de negócios.
 
-## Estrutura do Projeto
+- **PostgreSQL**: Escolhido como banco de dados para armazenar e gerenciar os dados da aplicação de maneira eficiente e confiável.
 
-O projeto está dividido em duas partes principais:
+- **Docker**: Implementamos um container Docker para a aplicação, facilitando a implantação e garantindo consistência em diferentes ambientes.
 
-### Backend (Spring Boot)
+## Funcionalidades
 
-O backend é desenvolvido em Java utilizando o framework Spring Boot 3. Ele inclui entidades para Curso e Aula, com endpoints CRUD correspondentes. A camada de persistência é implementada utilizando Spring Data JPA.
+### Métodos CRUD
 
-### Frontend (Angular)
+A aplicação oferece os métodos básicos de um CRUD (Create, Read, Update, Delete), todos operando de maneira eficaz:
 
-O frontend é construído em Angular 17 e proporciona uma interface de usuário amigável para interagir com os cursos e suas aulas. As funcionalidades incluem listar, adicionar, editar e excluir cursos e aulas.
+- **GET (ALL)**: Recupera todos os cursos disponíveis na base de dados.
 
-## Executando a Aplicação Localmente
+- **GET (BY ID)**: Recupera um curso específico com base em seu identificador.
 
-### Pré-requisitos
+- **POST**: Adiciona um novo curso à base de dados.
 
-- JDK 17
-- Node.js e npm
-- Banco de dados configurado (PostgreSQL)
+- **PUT**: Atualiza um curso existente com base em seu identificador.
 
-### Backend (Spring Boot)
+- **DELETE**: Remove um curso específico da base de dados.
 
-1. Navegue até o diretório do projeto Spring Boot.
-2. Execute o comando: `./mvnw spring-boot:run`
+### Funcionalidades Adicionais
 
-### Frontend (Angular)
+Além dos métodos CRUD, a aplicação também inclui funcionalidades adicionais:
 
-1. Navegue até o diretório do projeto Angular.
-2. Execute o comando: `ng serve`
+- **Validações Funcionando**: Implementamos validações para garantir a integridade e consistência dos dados.
 
-A aplicação estará disponível em `http://localhost:4200`.
+- **Paginação de Dados**: Para facilitar a navegação e a exibição eficiente de grandes conjuntos de dados, implementamos um sistema de paginação.
 
-## Integração
+## Executando a Aplicação
 
-O frontend e o backend se comunicam para fornecer uma experiência de usuário integrada. Certifique-se de que ambos os serviços estejam em execução ao testar a aplicação localmente.
+Para executar a aplicação, siga as instruções abaixo:
+
+1. Clone o repositório para sua máquina local.
+2. Certifique-se de ter o Docker instalado.
+3. Navegue até o diretório do projeto.
+4. Execute o seguinte comando para construir e iniciar o container Docker:
+
+```bash
+docker-compose up
