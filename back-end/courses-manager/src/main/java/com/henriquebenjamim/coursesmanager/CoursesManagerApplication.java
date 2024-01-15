@@ -29,14 +29,14 @@ public class CoursesManagerApplication {
 			Lesson l = new Lesson();
 
 			l.setName("Introdução");
-			l.setYoutubeUrl("watch?v=1");
+			l.setYoutubeUrl("watch?v=11");
 			l.setCourse(c);
 			c.getLessons().add(l);
 
 			Lesson l1 = new Lesson();
 
 			l1.setName("Core do Angular");
-			l1.setYoutubeUrl("watch?v=2");
+			l1.setYoutubeUrl("watch?v=22");
 			l1.setCourse(c);
 			c.getLessons().add(l1);
 

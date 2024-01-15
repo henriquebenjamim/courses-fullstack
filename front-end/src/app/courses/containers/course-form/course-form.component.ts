@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, NonNullableFormBuilder, UntypedFormArray, Validators } from '@angular/forms';
+import { FormGroup, NonNullableFormBuilder, UntypedFormArray, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 
@@ -57,9 +57,8 @@ export class CourseFormComponent {
       name: [lesson.name, [Validators.required,
         Validators.minLength(5), 
         Validators.max(100)]],
-      youtubeUrl: [lesson.youtubeUrl, [Validators.required,
-        Validators.minLength(10), 
-        Validators.max(11)]]
+      youtubeUrl: [lesson.youtubeUrl, 
+        [Validators.required, Validators.minLength(10), Validators.maxLength(11)]]
     });
   }
 
@@ -78,14 +77,14 @@ export class CourseFormComponent {
   }
 
   onSubmit() {
-
-    if(this.form.valid) {
+    if (this.form.valid) {
       this.service.save(this.form.value)
-      .subscribe(result => this.onSuccess(), error => this.onError());
+        .subscribe(result => this.onSuccess(), error => this.onError());
     } else {
       this.formUtils.validateAllFormFields(this.form);
     }
   }
+
 
   onCancel() {
     this.location.back();

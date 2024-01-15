@@ -21,6 +21,7 @@ export class FormUtilsService {
         }
       });
     } catch (error) {
+      console.log('saudhasuhd');
       console.error('Error in validateAllFormFields:', error);
     }
   }
